@@ -24,7 +24,7 @@ class LoginController extends Controller
     ],$request->input(key:'remember'))){
         $request->session()->put('login', true);
         $request->session()->put('name', 'Nguyễn Minh Kha');
-        return redirect()->route('add');
+        return redirect()->route('dashboard');
         }
         $request->session()->flash('error','Email hoặc Password không đúng');
         return redirect()->back();

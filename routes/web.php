@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\ProductControllerHome;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\Admin\CartListController;
+use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\LiveSearchController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
@@ -68,6 +69,7 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy',[SliderController::class,'destroy']);
 
         });
+     
         #Upload
         Route::post('upload/services',[UploadController::class,'store']);
 
@@ -79,6 +81,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('comments',[CommentController::class,'index']);
         Route::get('comments/check/{comment}',[CommentController::class,'duyet']);
         Route::get('comments/destroy/{comment}',[CommentController::class,'destroy']);
+        #dashboard
+        Route::get('dash',[DashBoardController::class,'index'])->name('dashboard');
     });
 
   

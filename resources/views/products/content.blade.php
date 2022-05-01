@@ -79,15 +79,17 @@
                             {{ $title }}  &nbsp;&nbsp;
                         @php
                         if($dem > 0){
-                         echo  '<span class="fs-18 cl11">';
+                         echo  '<span class="wrap-rating fs-18 cl11 pointer">';
                          for ($i = 0; $i < $tb; $i++){
                               echo  ' <i class="zmdi zmdi-star"></i>';
                             }
                          for ($i = 0; $i < floor(5- $tb); $i++){
-                              echo '<i class="zmdi zmdi-star-outline"></i></span>';
+                              echo ' <i class="zmdi zmdi-star-outline"></i>';
                         }
+                        echo '</span>';
                         echo '&nbsp;&nbsp; <span style="color: #2f80ed;font-size: 13px;line-height: 17px;">'.$dem.' đánh giá</span>';
                     }
+                   
                         @endphp
                       
                         </h4>
